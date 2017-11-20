@@ -26,6 +26,12 @@ Não queremos ser repetitivos, mas para facilitar a sua vida vamos deixar um lin
 
 http://developer.omie.com.br/service-list/
 
+## SDK's e Exemplos
+
+ - [Delphi](https://github.com/omiexperience/api-examples/tree/master/delphi)
+ - [DotNet](https://github.com/omiexperience/api-examples/tree/master/dotnet)
+ - [PHP](https://github.com/omiexperience/api-examples/tree/master/dotnet)
+
 ## Como testar as API's
 
 Você pode começar os testes usando os exemplos que deixamos prontos. Por exemplo, se acessarmos a API de [Contas Correntes](https://app.omie.com.br/api/v1/geral/contacorrente/), será possível, consultar todos os métodos e a documentação dos campos disponíveis. A grande maioria das APIs dispõe de um método para listar os registros cadastrados. Para começar, podemos testar o método [PesquisarContaCorrente](https://app.omie.com.br/api/v1/geral/contacorrente/#PesquisarContaCorrente).
@@ -34,7 +40,9 @@ Na própria documentação, você encontra uma forma de testar a API sem que haj
 
 ![Teste agora mesmo](https://github.com/omiexperience/api-examples/raw/master/help-assets/api-call-start.png)
 
-Ao clicar no botão “Teste agora mesmo” a ferramenta de teste é exibida e já está pronta para que você experimente. Basta clicar no botão “Executar”. Nesse momento, você não precisa se preocupar com o APP_KEY e o APP_SECRET que já estão informados na tela. Eles se referem a um aplicativo de testes da Omie e você pode utilizar para consultar e verificar os resultados da requisição. Mas, se preferir, você pode substituir essas informações pela APP_KEY e APP_SECRET do aplicativo que você acabou de criar. Você também irá notar que pode trocar o método da requisição alterando o valor do campo OMIE_CALL. Caso você altere o método é importante verificar também o conteúdo da requisição, que varia de acordo com a requisição. 
+Ao clicar no botão “Teste agora mesmo” a ferramenta de teste é exibida e já está pronta para que você experimente. Basta clicar no botão “Executar”. Nesse momento, você não precisa se preocupar com o *APP_KEY* e o *APP_SECRET* que já estão informados na tela. Eles se referem a um aplicativo de testes da Omie e você pode utilizar para consultar e verificar os resultados da requisição. Mas, se preferir, você pode substituir essas informações pela *APP_KEY* e *APP_SECRET* do seu aplicativo de testes.
+
+Você também irá notar que pode trocar o método da requisição alterando o valor do campo OMIE_CALL. Caso você altere o método é importante verificar também o conteúdo da requisição, que varia de acordo com a requisição. 
 
 ![Requisição](https://github.com/omiexperience/api-examples/raw/master/help-assets/api-call-request.png)
 
@@ -46,6 +54,6 @@ O resultado da requisição será algo semelhante ao que podemos observar abaixo
 
 Caso você tenha alguma dúvida sobre o uso API ou se o teste que você está realizando não está retornando o que você esperava, você pode compartilhar a requisição clicando em “Compartilhar esse exemplo”. 
 
-Ao clicar, você verá o link do compartilhamento desse exemplo. Nos encaminhe esse link que para termos acesso ao mesmo teste que você está realizando: ajuda@omie.com.br ou chame-nos no chat :-)
+Ao clicar, você verá o link do compartilhamento desse exemplo. Encaminhe esse link que para termos acesso ao mesmo teste que você está realizando: ajuda@omie.com.br :-)
 
 Se você está começando o seu projeto agora, também pode ajudar um bate papo com nossos especialistas para debater a melhor forma de montar a integração :-)
