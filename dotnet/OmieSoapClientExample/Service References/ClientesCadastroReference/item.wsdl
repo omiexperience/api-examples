@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" xmlns:s="http://www.w3.org/2001/XMLSchema" targetNamespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema targetNamespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL">
+      <s:complexType name="clientes_cadastro">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Cadastro reduzido de produtos
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_cliente_omie" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Código do cliente - gerado pelo Omie.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_cliente_integracao" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Código de Integração com sistemas legados.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="cnpj_cpf" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                CNPJ / CPF do cliente.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="razao_social" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Razão Social do cliente
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="nome_fantasia" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Nome Fantasia do cliente
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="logradouro" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Logradouro
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="endereco" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Endereço
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="endereco_numero" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Número do Endereço
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="complemento" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Complemento para o Número do Endereço
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="bairro" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Bairro
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="cidade" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Código da Cidade
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="estado" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Sigla do Estado
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="cep" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                CEP
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_pais" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Código do País
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="contato" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Nome para contato
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="telefone1_ddd" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                DDD Telefone
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="telefone1_numero" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Telefone para Contato
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="telefone2_ddd" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                DDD Telefone 2
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="telefone2_numero" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Telefone 2
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="fax_ddd" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                DDD Fax
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="fax_numero" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Fax
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="email" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                E-Mail
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="homepage" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                WebSite
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="observacao" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Observação
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="inscricao_municipal" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Inscrição Municipal
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="inscricao_estadual" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Inscrição Estadual
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="inscricao_suframa" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Inscrição Suframa
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="pessoa_fisica" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Pessoa Física
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="optante_simples_nacional" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Indica se o Cliente / Fornecedor é Optante do Simples Nacional [S/N]
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="bloqueado" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Registro Bloqueado pela API
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="importado_api" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Gerado da API (S/N)
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="tags" nillable="true" type="tns:tagsArray">
+            <s:annotation>
+              <s:documentation>
+                                Tags do Cliente ou Fornecedor
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientes_cadastroArray">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Lista de clientes_cadastro
+                    </s:documentation>
+        </s:annotation>
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:attribute wsdl:arrayType="tns:clientes_cadastro[]" ref="soapenc:arrayType" />
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="tags">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Tags do Cliente ou Fornecedor
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="tag" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Tag do Cliente ou Fornecedor
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="tagsArray">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Lista de tags
+                    </s:documentation>
+        </s:annotation>
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:attribute wsdl:arrayType="tns:tags[]" ref="soapenc:arrayType" />
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clientes_cadastro_chave">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Chave para pesquisa do cadastro de clientes.
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_cliente_omie" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Código do cliente - gerado pelo Omie.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_cliente_integracao" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Código de Integração com sistemas legados.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientes_cadastro_resumido">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Cadastro reduzido de produtos
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_cliente" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Código do cliente - gerado pelo Omie.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_cliente_integracao" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Código de Integração com sistemas legados.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="razao_social" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Razão Social do cliente
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="nome_fantasia" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Nome Fantasia do cliente
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="cnpj_cpf" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                CNPJ / CPF do cliente.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientes_cadastro_resumidoArray">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Lista de clientes_cadastro_resumido
+                    </s:documentation>
+        </s:annotation>
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:attribute wsdl:arrayType="tns:clientes_cadastro_resumido[]" ref="soapenc:arrayType" />
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clientes_status">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Status de retorno do cadastro de clientes.
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_cliente_omie" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Código do cliente - gerado pelo Omie.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_cliente_integracao" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Código de Integração com sistemas legados.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="codigo_status" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Código do status do processamento
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="descricao_status" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Descrição do status do lote de processamento
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientes_pesquisar">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Solicitação de pesquisa de dados.
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="limite" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Quantidade máxima de registros retornados. 
+                                Limite máximo 200.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="iniciar_em" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Informe a partir de qual registro as informações serão retornadas.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="ordenar_por" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Informe qual a ordem de pesquisa.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="ordem_tipo" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Se a ordem dos dados é ascendente ou descendente.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientes_pesquisar_retorno">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Resposta da pesquisa.
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="total_registros" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Retorna a quantidade total de registro para a pesquisa realizada.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="registros_encontrados" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Retorna o total de registros retornados no offset solicitado.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientes_lote_request">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Lote de cadastros de clientes para inclusão, limitado a 50
+                        ocorrências por requisição.
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="lote" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Número do lote
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="clientes_cadastro" nillable="true" type="tns:clientes_cadastroArray">
+            <s:annotation>
+              <s:documentation>
+                                Cadastro reduzido de produtos
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientes_lote_response">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Resposta do processamento do lote de clientes cadastrados.
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="lote" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Número do lote
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="codigo_status" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Código do status do processamento
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="descricao_status" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Descrição do status do lote de processamento
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientes_list_request">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Lista os clientes cadastrados
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="pagina" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Número da página retornada
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="registros_por_pagina" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Número de registros retornados na página.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="apenas_importado_api" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Exibir apenas os registros gerados pela API
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="ordenar_por" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Ordem de exibição dos dados. Padrão: Código.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="ordem_decrescente" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Se a lista será apresentada em ordem decrescente.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="filtrar_por_data_de" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Filtrar os registros a partir de uma data.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="filtrar_por_data_ate" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Filtrar os registros até uma data.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="filtrar_apenas_inclusao" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Filtrar apenas os registros incluídos.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="filtrar_apenas_alteracao" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Filtrar apenas os registros alterados.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="clientesFiltro" nillable="true" type="tns:clientesFiltro">
+            <s:annotation>
+              <s:documentation>
+                                Filtrar cadastro de clientesÂ Â 
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="ordem_descrescente" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Deprecated
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientesFiltro">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Filtrar cadastro de clientes
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_cliente_omie" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Código do cliente - gerado pelo Omie.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="codigo_cliente_integracao" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Código de Integração com sistemas legados.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="cnpj_cpf" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                CNPJ / CPF do cliente.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="razao_social" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Razão Social do cliente
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="nome_fantasia" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Nome Fantasia do cliente
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="endereco" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Endereço
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="bairro" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Bairro
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="cidade" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Código da Cidade
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="estado" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Sigla do Estado
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="cep" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                CEP
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="contato" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Nome para contato
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="email" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                E-Mail
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="homepage" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                WebSite
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="inscricao_municipal" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Inscrição Municipal
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="inscricao_estadual" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Inscrição Estadual
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="inscricao_suframa" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Inscrição Suframa
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="pessoa_fisica" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Pessoa Física
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="optante_simples_nacional" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Indica se o Cliente / Fornecedor é Optante do Simples Nacional [S/N]
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientes_list_response">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Lista de clientes cadastrados no omie.
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="pagina" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Número da página retornada
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="total_de_paginas" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Número total de páginas
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="registros" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Número de registros retornados na página.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="total_de_registros" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                total de registros encontrados
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="clientes_cadastro_resumido" nillable="true" type="tns:clientes_cadastro_resumidoArray">
+            <s:annotation>
+              <s:documentation>
+                                Cadastro reduzido de produtos
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clientes_listfull_response">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Lista de clientes cadastrados no omie.
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="pagina" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Número da página retornada
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="total_de_paginas" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Número total de páginas
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="registros" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Número de registros retornados na página.
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="total_de_registros" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                total de registros encontrados
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="clientes_cadastro" nillable="true" type="tns:clientes_cadastroArray">
+            <s:annotation>
+              <s:documentation>
+                                Cadastro reduzido de produtos
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="omie_fail">
+        <s:annotation>
+          <s:documentation>
+                        Doc:Erro gerado pela aplicação.
+                    </s:documentation>
+        </s:annotation>
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="code" nillable="true" type="s:integer">
+            <s:annotation>
+              <s:documentation>
+                                Codigo do erro
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="description" nillable="true" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Descricao do erro
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="referer" type="s:string">
+            <s:annotation>
+              <s:documentation>
+                                Origem do erro
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="fatal" type="s:boolean">
+            <s:annotation>
+              <s:documentation>
+                                Indica se eh um erro fatal
+                            </s:documentation>
+            </s:annotation>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IncluirClienteSoapIn">
+    <wsdl:part name="clientes_cadastro" type="tns:clientes_cadastro">
+      <s:documentation>
+                Cadastro reduzido de produtos
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IncluirClienteSoapOut">
+    <wsdl:part name="clientes_status" type="tns:clientes_status">
+      <s:documentation>
+                Status de retorno do cadastro de clientes.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AlterarClienteSoapIn">
+    <wsdl:part name="clientes_cadastro" type="tns:clientes_cadastro">
+      <s:documentation>
+                Cadastro reduzido de produtos
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AlterarClienteSoapOut">
+    <wsdl:part name="clientes_status" type="tns:clientes_status">
+      <s:documentation>
+                Status de retorno do cadastro de clientes.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExcluirClienteSoapIn">
+    <wsdl:part name="clientes_cadastro_chave" type="tns:clientes_cadastro_chave">
+      <s:documentation>
+                Chave para pesquisa do cadastro de clientes.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ExcluirClienteSoapOut">
+    <wsdl:part name="clientes_status" type="tns:clientes_status">
+      <s:documentation>
+                Status de retorno do cadastro de clientes.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteSoapIn">
+    <wsdl:part name="clientes_cadastro_chave" type="tns:clientes_cadastro_chave">
+      <s:documentation>
+                Chave para pesquisa do cadastro de clientes.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteSoapOut">
+    <wsdl:part name="clientes_cadastro" type="tns:clientes_cadastro">
+      <s:documentation>
+                Cadastro reduzido de produtos
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListarClientesSoapIn">
+    <wsdl:part name="clientes_list_request" type="tns:clientes_list_request">
+      <s:documentation>
+                Lista os clientes cadastrados
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListarClientesSoapOut">
+    <wsdl:part name="clientes_listfull_response" type="tns:clientes_listfull_response">
+      <s:documentation>
+                Lista de clientes cadastrados no omie.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListarClientesResumidoSoapIn">
+    <wsdl:part name="clientes_list_request" type="tns:clientes_list_request">
+      <s:documentation>
+                Lista os clientes cadastrados
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListarClientesResumidoSoapOut">
+    <wsdl:part name="clientes_list_response" type="tns:clientes_list_response">
+      <s:documentation>
+                Lista de clientes cadastrados no omie.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IncluirClientesPorLoteSoapIn">
+    <wsdl:part name="clientes_lote_request" type="tns:clientes_lote_request">
+      <s:documentation>
+                Lote de cadastros de clientes para inclusão, limitado a 50 ocorrências
+                por requisição.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IncluirClientesPorLoteSoapOut">
+    <wsdl:part name="clientes_lote_response" type="tns:clientes_lote_response">
+      <s:documentation>
+                Resposta do processamento do lote de clientes cadastrados.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpsertClienteSoapIn">
+    <wsdl:part name="clientes_cadastro" type="tns:clientes_cadastro">
+      <s:documentation>
+                Cadastro reduzido de produtos
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpsertClienteSoapOut">
+    <wsdl:part name="clientes_status" type="tns:clientes_status">
+      <s:documentation>
+                Status de retorno do cadastro de clientes.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpsertClientesPorLoteSoapIn">
+    <wsdl:part name="clientes_lote_request" type="tns:clientes_lote_request">
+      <s:documentation>
+                Lote de cadastros de clientes para inclusão, limitado a 50 ocorrências
+                por requisição.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpsertClientesPorLoteSoapOut">
+    <wsdl:part name="clientes_lote_response" type="tns:clientes_lote_response">
+      <s:documentation>
+                Resposta do processamento do lote de clientes cadastrados.
+            </s:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ClientesCadastroSoap">
+    <wsdl:operation name="IncluirCliente">
+      <wsdl:documentation>
+                Inclui o cliente no Omie
+            </wsdl:documentation>
+      <wsdl:input message="tns:IncluirClienteSoapIn" />
+      <wsdl:output message="tns:IncluirClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarCliente">
+      <wsdl:documentation>
+                Altera os dados do cliente
+            </wsdl:documentation>
+      <wsdl:input message="tns:AlterarClienteSoapIn" />
+      <wsdl:output message="tns:AlterarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirCliente">
+      <wsdl:documentation>
+                Exclui um cliente da base de dados.
+            </wsdl:documentation>
+      <wsdl:input message="tns:ExcluirClienteSoapIn" />
+      <wsdl:output message="tns:ExcluirClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCliente">
+      <wsdl:documentation>
+                Consulta os dados de um cliente
+            </wsdl:documentation>
+      <wsdl:input message="tns:ConsultarClienteSoapIn" />
+      <wsdl:output message="tns:ConsultarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientes">
+      <wsdl:documentation>
+                Lista os clientes cadastrados
+            </wsdl:documentation>
+      <wsdl:input message="tns:ListarClientesSoapIn" />
+      <wsdl:output message="tns:ListarClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientesResumido">
+      <wsdl:documentation>
+                Realiza pesquisa dos clientes
+            </wsdl:documentation>
+      <wsdl:input message="tns:ListarClientesResumidoSoapIn" />
+      <wsdl:output message="tns:ListarClientesResumidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IncluirClientesPorLote">
+      <wsdl:documentation>
+                Rotina para inclusão por lote de clientes.
+            </wsdl:documentation>
+      <wsdl:input message="tns:IncluirClientesPorLoteSoapIn" />
+      <wsdl:output message="tns:IncluirClientesPorLoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpsertCliente">
+      <wsdl:documentation>
+                Realiza o UPSERT da tabela de clientes (INCLUSÃO/ALTERAÇÃO).
+            </wsdl:documentation>
+      <wsdl:input message="tns:UpsertClienteSoapIn" />
+      <wsdl:output message="tns:UpsertClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpsertClientesPorLote">
+      <wsdl:documentation>
+                Inclui/Altera clientes por lote.
+            </wsdl:documentation>
+      <wsdl:input message="tns:UpsertClientesPorLoteSoapIn" />
+      <wsdl:output message="tns:UpsertClientesPorLoteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientesCadastroSoap" type="tns:ClientesCadastroSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="IncluirCliente">
+      <soap:operation soapAction="http://app.omie.com.br/api/v1/geral/clientes/?WSDLIncluirCliente" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_cadastro" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_status" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarCliente">
+      <soap:operation soapAction="http://app.omie.com.br/api/v1/geral/clientes/?WSDLAlterarCliente" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_cadastro" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_status" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirCliente">
+      <soap:operation soapAction="http://app.omie.com.br/api/v1/geral/clientes/?WSDLExcluirCliente" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_cadastro_chave" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_status" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCliente">
+      <soap:operation soapAction="http://app.omie.com.br/api/v1/geral/clientes/?WSDLConsultarCliente" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_cadastro_chave" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_cadastro" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientes">
+      <soap:operation soapAction="http://app.omie.com.br/api/v1/geral/clientes/?WSDLListarClientes" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_list_request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_listfull_response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientesResumido">
+      <soap:operation soapAction="http://app.omie.com.br/api/v1/geral/clientes/?WSDLListarClientesResumido" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_list_request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_list_response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirClientesPorLote">
+      <soap:operation soapAction="http://app.omie.com.br/api/v1/geral/clientes/?WSDLIncluirClientesPorLote" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_lote_request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_lote_response" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpsertCliente">
+      <soap:operation soapAction="http://app.omie.com.br/api/v1/geral/clientes/?WSDLUpsertCliente" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_cadastro" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_status" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpsertClientesPorLote">
+      <soap:operation soapAction="http://app.omie.com.br/api/v1/geral/clientes/?WSDLUpsertClientesPorLote" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_lote_request" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://app.omie.com.br/api/v1/geral/clientes/?WSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" parts="clientes_lote_response" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientesCadastro">
+    <wsdl:port name="ClientesCadastroSoap" binding="tns:ClientesCadastroSoap">
+      <soap:address location="http://app.omie.com.br/api/v1/geral/clientes/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
