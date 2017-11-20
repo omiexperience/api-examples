@@ -3,6 +3,7 @@
 
 Segue abaixo um exemplo usando o *SDK* disponibilizado para PHP:
 
+```php
     <?php  
       require_once("ClientesCadastroSoapClient.php");  
       require_once("OmieAppAuth.php"); // gere a sua chave em: http://developer.omie.com.br/generate-key/ 
@@ -26,12 +27,14 @@ Segue abaixo um exemplo usando o *SDK* disponibilizado para PHP:
         print "Ocorreu um erro no processamento: " . $e->faultstring . "\n"; 
         @print_r($e->detail); 
       } 
-    ?> 
+```
 
 Se a requisição for aceita, o resultado exibido será algo como:
 
+```php
     Cadastrado com sucesso: stdClass Object 
     ( 
         [codigo_cliente_omie] => 363296 
         [codigo_cliente_integracao] => 1234 
     )
+```
