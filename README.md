@@ -1,3 +1,4 @@
+
 # Começando a integração com Omie
 
 Agora vai! Seja bem vindo ao nosso repositório com mais informações para os nerds, geeks e entusiastas :-)
@@ -51,6 +52,10 @@ O resultado da requisição será algo semelhante ao que podemos observar abaixo
 ![Resposta](https://github.com/omiexperience/api-examples/raw/master/help-assets/api-call-response.png)
 
 ## Mais ajuda
+
+Esse *quick start* foi baseado num PDF criado por um dos nossos especialistas. Se você quer saber mais detalhes de como criar um aplicativo teste, como configurar o *SoapUI* ou *Postman* para realizar os testes, dá uma olhada nele:
+
+[Omie API - Quick Start [By Darth Vader].pdf](https://github.com/omiexperience/api-examples/blob/master/help-assets/api-quick-start.pdf)
 
 Caso você tenha alguma dúvida sobre o uso API ou se o teste que você está realizando não está retornando o que você esperava, você pode compartilhar a requisição clicando em “Compartilhar esse exemplo”. 
 
