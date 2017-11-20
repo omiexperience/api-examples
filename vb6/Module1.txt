@@ -1,0 +1,100 @@
+Option Explicit On
+Module Module1
+
+    Public Sub Main()
+        ' Start Internet Explorer and type in the url of your webservice page
+        ' i.e.: http://localhost/myweb/mywebService.asmx
+        ' In that page, click on the link to the method you want to call from your application
+        ' Select in upper POST section the xml code from <?xml.. to </soap:Envelope>
+        ' Copy this into the strXml variable, escape all quotes and replace "string" your parameter value
+        ' Copy the url to your webservice page (asmx) to the strUrl variable
+        ' Copy the SOAPAction value to the strSoapAction variable
+
+        Dim strSoapAction As String
+        Dim strUrl As String
+        Dim strXml As String
+        Dim appKey As String
+        Dim appSecret As String
+
+        appKey = "COLOQUE_SUA_APP_KEY_AQUI"
+        appSecret = "COLOUE_SEU_APP_SECRET_AQUI"
+
+        strUrl = "http://app.omie.com.br/api/v1/financas/contapagar/"
+        strSoapAction = "http://app.omie.com.br/api/v1/financas/contapagar/?WSDLLancamentoContaPagar "
+
+        strXml = "<?xml version=""1.0"" encoding=""utf-8""?>" & _
+                 "<soapenv:Envelope xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:soapenv=""http://schemas.xmlsoap.org/soap/envelope/"" xmlns:wsdl=""http://app.omie.com.br/api/v1/financas/contapagar/?WSDL"">" & _
+                 "   <soapenv:Header>" & _
+                 "      <app_key>" & appKey & "</app_key>" & _
+                 "      <app_secret>" & appSecret & "</app_secret>" & _
+                 "   </soapenv:Header>" & _
+                 "   <soapenv:Body>" & _
+                 "      <wsdl:ListarContasPagar soapenv:encodingStyle=""http://schemas.xmlsoap.org/soap/encoding/"">" & _
+                 "         <lcpListarRequest xsi:type=""wsdl:lcpListarRequest"">" & _
+                 "            <pagina xsi:type=""xsd:integer"">1</pagina>" & _
+                 "            <registros_por_pagina xsi:type=""xsd:integer"">50</registros_por_pagina>" & _
+                 "            <apenas_importado_api xsi:type=""xsd:string"">N</apenas_importado_api>" & _
+                 "            <filtrar_por_data_de xsi:type=""xsd:string"">01/05/2015</filtrar_por_data_de>" & _
+                 "            <filtrar_por_data_ate xsi:type=""xsd:string"">05/05/2015</filtrar_por_data_ate>" & _
+                 "         </lcpListarRequest>" & _
+                 "      </wsdl:ListarContasPagar>" & _
+                 "   </soapenv:Body>" & _
+                 "</soapenv:Envelope>"
+
+        ' Call PostWebservice and put result in text box
+        Console.WriteLine(PostWebservice(strUrl, strSoapAction, strXml))
+        Console.ReadLine()
+
+
+    End Sub
+
+
+    Private Function PostWebservice(ByVal AsmxUrl As String, ByVal SoapActionUrl As String, ByVal XmlBody As String) As String
+        Dim objDom As Object
+        Dim objXmlHttp As Object
+        Dim strRet As String
+        Dim intPos1 As Integer
+        Dim intPos2 As Integer
+
+        On Error GoTo Err_PW
+
+        ' Create objects to DOMDocument and XMLHTTP
+        objDom = CreateObject("MSXML2.DOMDocument")
+        objXmlHttp = CreateObject("MSXML2.XMLHTTP")
+
+        ' Load XML
+        objDom.async = False
+        objDom.loadXML(XmlBody)
+
+        ' Open the webservice
+        objXmlHttp.open("POST", AsmxUrl, False)
+
+        ' Create headings
+        objXmlHttp.setRequestHeader("Content-Type", "text/xml; charset=utf-8")
+        objXmlHttp.setRequestHeader("SOAPAction", SoapActionUrl)
+
+        ' Send XML command
+        objXmlHttp.send(objDom.xml)
+
+        ' Get all response text from webservice
+        strRet = objXmlHttp.responseText
+
+        ' Close object
+        objXmlHttp = Nothing
+
+        ' Extract result
+        intPos1 = InStr(strRet, "Result>") + 7
+        intPos2 = InStr(strRet, "</")
+        If intPos1 > 7 And intPos2 > 0 Then
+            strRet = Mid(strRet, intPos1, intPos2 - intPos1)
+        End If
+
+        ' Return result
+        PostWebservice = strRet
+
+        Exit Function
+Err_PW:
+        PostWebservice = "Error: " & Err.Number & " - " & Err.Description
+
+    End Function
+End Module
