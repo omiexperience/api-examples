@@ -1,9 +1,10 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var resolve = require('path').resolve
 
 var abspath = function(p) {
-  return process.env.APP_ROOT + "/" + p;
+  return resolve(__dirname + '/../' + p);
 }
 
 // This is the webpack configuration to compile and bundle Angular code and

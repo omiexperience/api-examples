@@ -1,5 +1,5 @@
 export class Cliente {
-	codigo_cliente_omie: integer;
+	codigo_cliente_omie: string;
 	codigo_cliente_integracao: string;
 	razao_social: string;
 	cnpj_cpf: string;
