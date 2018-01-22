@@ -1,0 +1,14 @@
+<table class="table" *ngIf="clientes.length > 0">
+  <thead>
+    <th>Nome</th>
+    <th>CNPJ / CPF</th>
+    <th>E-mail</th>
+  </thead>
+  <tbody>
+    <tr class="cliente" *ngFor="let cliente of clientes">
+      <td>{{cliente.nome_fantasia}}</td>
+      <td>{{cliente.cnpj_cpf}}</td>
+      <td>{{cliente.email}}</td>
+    </tr>
+  </tbody>
+</table>
