@@ -1,14 +1,14 @@
-# [AngularJS](http://www.angularjs.org/) Exemplo
+# Exemplo [AngularJS](http://www.angularjs.org/)
 
 ## Instalando as dependências
 
-    ```
-    npm install
-    ```
+```
+npm install
+```
 
 ## Executando
 
-    ```
-    npm start
-    ```
+```
+npm start
+```
 
