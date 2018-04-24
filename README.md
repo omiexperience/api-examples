@@ -31,7 +31,7 @@ http://developer.omie.com.br/service-list/
 
  - [Delphi](https://github.com/omiexperience/api-examples/tree/master/delphi)
  - [DotNet](https://github.com/omiexperience/api-examples/tree/master/dotnet)
- - [PHP](https://github.com/omiexperience/api-examples/tree/master/dotnet)
+ - [PHP](https://github.com/omiexperience/api-examples/tree/master/php)
 
 ## Como testar as API's
 
