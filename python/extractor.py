@@ -42,6 +42,6 @@ response = requests.get(url_api)
 
 # Testa se deu tudo certo
 if response.status_code == 200:
-    print(response.json())
+    print(response.json()[list(response.json().keys())[-1]])
 else:
     print('Requisição falhou')
