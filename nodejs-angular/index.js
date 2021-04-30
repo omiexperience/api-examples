@@ -10,8 +10,9 @@ app.use(bodyParser.json());
 
 var compiler = webpack(config);
 
+// coloque seu app key e secret aqui, esse aqui é apenas um exemplo
 var OMIE_APP_KEY = '1560731700';
-var OMIE_APP_SECRET = '226dcf372489bb45ceede61bfd98f0f1';
+var OMIE_APP_SECRET = '226**************************0f1';
 
 app.get("/api/clientes", function (req, res) {
   var params = {
