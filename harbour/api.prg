@@ -20,6 +20,8 @@ FUNCTION API_Omie
    LOCAL cHost       := AllTrim(hIniData["AUTH"]["APP_KEY"])
    LOCAL cPort       := AllTrim(hIniData["AUTH"]["APP_SECRET"])
    LOCAL hResult     := {=>}
+   LOCAL cJson       := hb_jsonEncode(hParams)
 
+   ? cJson
    //Construir Requisição POST
 RETURN hResult
