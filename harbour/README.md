@@ -2,7 +2,7 @@
 
 Para realizar uma requisição na API, utilize a função **"API_Omie"**
 
-Parâmetros da Função:
+## Parâmetros da Função:
 
 **cEndpointURI :**
   - *Tipo:* Caracter (String)
@@ -18,3 +18,10 @@ Parâmetros da Função:
   - *Tipo:* Hash
   - *Esperado:* Parâmetros da Requisição
   - *Obrigatório*: Sim
+
+##  Retorno da Função
+  - *Tipo:* Array
+  - *Esperado:*
+  - - \[1\] : *Tipo:* Lógico | *Houve Erro:* .T. ou .F.
+  - - \[2\] : *Tipo:* Hash | *Conteúdo retornado no JSON*
+  - - \[3\] : *Tipo:* Caracter | *Conteúdo retornado no Body da Resposta*
