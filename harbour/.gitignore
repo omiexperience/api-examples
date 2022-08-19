@@ -9,4 +9,5 @@ api.ini
 *.dbf
 *.dbt
 *.ntx
+*.xbp
 xbuild.windows.ini
