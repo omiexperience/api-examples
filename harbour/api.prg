@@ -1,14 +1,15 @@
 FUNCTION main
    LOCAL hParams := {=>}
+   LOCAL hResult := {=>}
 
    //Parametros que serão enviados
    hParams['pagina'] := 1
    hParams['registros_por_pagina'] = 50
 
    //Exemplo de chamada para listar cidades
-   API_Omie("https://app.omie.com.br/api/v1/geral/cidades/",; 
-            "PesquisarCidades",;
-            hParams)
+   hResult := API_Omie("https://app.omie.com.br/api/v1/geral/cidades/", ; 
+                       "PesquisarCidades", ;
+                       hParams)
 RETURN NIL
 
 
