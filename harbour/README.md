@@ -26,5 +26,5 @@ Altere os parâmetros **APP_KEY** e **APP_SECRET** dentro do arquivo api.ini con
   - *Tipo:* Array
   - *Esperado:*
   - - \[1\] : *Tipo:* Lógico | *Houve Erro:* .T. ou .F.
-  - - \[2\] : *Tipo:* Hash | *Conteúdo retornado no JSON*
-  - - \[3\] : *Tipo:* Caracter | *Conteúdo retornado no Body da Resposta*
+  - - \[2\] : *Tipo:* Hash | *Conteúdo retornado na resposta JSON*
+  - - \[3\] : *Tipo:* Caracter | *Conteúdo retornado no Body da resposta*
