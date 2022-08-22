@@ -7,9 +7,12 @@ FUNCTION main
    hParams['registros_por_pagina'] = 50
 
    //Exemplo de chamada para listar cidades
-   hResult := API_Omie("https://app.omie.com.br/api/v1/geral/cidades/", ; 
+   //hResult := API_Omie("https://app.omie.com.br/api/v1/geral/cidades/", ; 
+   //                    "PesquisarCidades", ;
+   //                    hParams)
+   hResult := API_Omie("http://localhost/api/v1/geral/cidades/", ; 
                        "PesquisarCidades", ;
-                       hParams)
+                        hParams)
 RETURN NIL
 
 
@@ -17,11 +20,30 @@ RETURN NIL
 FUNCTION API_Omie
    PARAM cEndpointURI, cMetodo, hParams
    LOCAL hIniData    := HB_ReadIni( "api.ini" )
-   LOCAL cHost       := AllTrim(hIniData["AUTH"]["APP_KEY"])
-   LOCAL cPort       := AllTrim(hIniData["AUTH"]["APP_SECRET"])
+   LOCAL cKey        := AllTrim(hIniData["AUTH"]["APP_KEY"])
+   LOCAL cSecret     := AllTrim(hIniData["AUTH"]["APP_SECRET"])
    LOCAL hResult     := {=>}
-   LOCAL cJson       := hb_jsonEncode(hParams)
+   LOCAL oUrl        := TUrl():new(cEndpointURI, .T.)
+   LOCAL oHttp       := TIpClientHttp():new(oUrl)
+   LOCAL cJson       
 
+   cJson := '{'                                                    + ;
+               '"call": "'       + cMetodo                  + '",' + ;
+               '"app_key": "'     + cKey                     + '",' + ;
+               '"app_secret": "'  + cSecret                  + '",' + ;
+               '"param": ['      + hb_jsonEncode(hParams)   + ']'  + ;
+            '}'
    ? cJson
-   //Construir Requisição POST
+   
+  
+   IF oHttp:open()
+      oHttp:post(cJson)
+      cJson := oHttp:readAll()
+      oHttp:close()
+      HB_JsonDecode(cJson , @hResult)
+      ? cJson
+   ELSE
+      ? "Connection error:", oHttp:lastErrorMessage()
+   ENDIF
+
 RETURN hResult
