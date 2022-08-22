@@ -40,9 +40,10 @@ FUNCTION API_Omie
       
    oHttp:Open("POST", cEndpointURI, .F.)
    oHttp:SetRequestHeader("Content-Type", "application/json")
-   oHttp:Send( cJson )
+   oHttp:Send(cJson)
 
-   cResponse   := oHttp:ResponseText
+   cResponse := oHttp:ResponseText
+   
    IF oHttp:ReadyState = 4 .AND. oHttp:Status = 200
       hResult[1] := .F.    
       hResult[2] := hb_jsonDecode(cResponse)
