@@ -3,7 +3,7 @@
 Para realizar uma requisição na API, utilize a função **"API_Omie"**
 
 Altere os parâmetros **APP_KEY** e **APP_SECRET** dentro do arquivo api.ini conforme as credenciais do seu aplicativo na Omie.  
-(http://docs.omie.com.br/m/20204/l/612759-obtendo-a-chave-de-acesso-para-integracoes-de-api)[http://docs.omie.com.br/m/20204/l/612759-obtendo-a-chave-de-acesso-para-integracoes-de-api]
+[http://docs.omie.com.br/m/20204/l/612759-obtendo-a-chave-de-acesso-para-integracoes-de-api](http://docs.omie.com.br/m/20204/l/612759-obtendo-a-chave-de-acesso-para-integracoes-de-api)
 
 ## Parâmetros da Função:
 
