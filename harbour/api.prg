@@ -7,12 +7,11 @@ FUNCTION main
    hParams['registros_por_pagina'] = 50
 
    //Exemplo de chamada para listar cidades
-   //hResult := API_Omie("https://app.omie.com.br/api/v1/geral/cidades/", ; 
-   //                    "PesquisarCidades", ;
-   //                    hParams)
-   hResult := API_Omie("http://localhost/api/v1/geral/cidades/", ; 
+   hResult := API_Omie("https://app.omie.com.br/api/v1/geral/cidades/", ; 
                        "PesquisarCidades", ;
-                        hParams)
+                       hParams)
+
+   ? ValToPrg(hResult)
 RETURN NIL
 
 
@@ -23,10 +22,15 @@ FUNCTION API_Omie
    LOCAL cKey        := AllTrim(hIniData["AUTH"]["APP_KEY"])
    LOCAL cSecret     := AllTrim(hIniData["AUTH"]["APP_SECRET"])
    LOCAL hResult     := {=>}
-   LOCAL oUrl        := TUrl():new(cEndpointURI, .T.)
-   LOCAL oHttp       := TIpClientHttp():new(oUrl)
    LOCAL cJson       
 
+   TRY
+      oHttp := CreateObject("MSXML2.ServerXMLHTTP.6.0")
+   CATCH
+      ? "Não foi possível iniciar o objeto MSXML"
+      QUIT
+   END
+   
    cJson := '{'                                                     + ;
                '"call": "'        + cMetodo                  + '",' + ;
                '"app_key": "'     + cKey                     + '",' + ;
@@ -34,16 +38,18 @@ FUNCTION API_Omie
                '"param": ['       + hb_jsonEncode(hParams)   + ']'  + ;
             '}'
       
-   IF oHttp:open()
-      oHttp:hFields["Content-Type"] := "application/json"
-      oHttp:post(cJson)
-      cJson := oHttp:readAll()
-      oHttp:close()
+   oHttp:Open("POST", cEndpointURI, .F.)
+   oHttp:SetRequestHeader("Content-Type", "application/json")
+   oHttp:Send( cJson )
 
-      HB_JsonDecode(cJson , @hResult)
-      ? cJson
+   cResponse   := oHttp:ResponseText
+   IF oHttp:ReadyState = 4 .AND. oHttp:Status = 200
+      hResult[1] := .F.    
+      hResult[2] := hb_jsonDecode(cResponse)
+      hResult[3] := cResponse   
    ELSE
-      ? "Erro de Conexão:", oHttp:lastErrorMessage()
+      hResult[1] := .T.
+      hResult[2] := "{}"
+      hResult[3] := cResponse
    ENDIF
-
 RETURN hResult
