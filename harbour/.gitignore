@@ -1,0 +1,13 @@
+api.ini
+*.c
+*.obj
+*.map
+*.exe
+*.bat
+*.log
+*.ppo
+*.dbf
+*.dbt
+*.ntx
+*.xbp
+xbuild.windows.ini
