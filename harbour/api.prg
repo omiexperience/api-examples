@@ -27,23 +27,23 @@ FUNCTION API_Omie
    LOCAL oHttp       := TIpClientHttp():new(oUrl)
    LOCAL cJson       
 
-   cJson := '{'                                                    + ;
-               '"call": "'       + cMetodo                  + '",' + ;
+   cJson := '{'                                                     + ;
+               '"call": "'        + cMetodo                  + '",' + ;
                '"app_key": "'     + cKey                     + '",' + ;
                '"app_secret": "'  + cSecret                  + '",' + ;
-               '"param": ['      + hb_jsonEncode(hParams)   + ']'  + ;
+               '"param": ['       + hb_jsonEncode(hParams)   + ']'  + ;
             '}'
-   ? cJson
-   
-  
+      
    IF oHttp:open()
+      oHttp:hFields["Content-Type"] := "application/json"
       oHttp:post(cJson)
       cJson := oHttp:readAll()
       oHttp:close()
+
       HB_JsonDecode(cJson , @hResult)
       ? cJson
    ELSE
-      ? "Connection error:", oHttp:lastErrorMessage()
+      ? "Erro de Conexão:", oHttp:lastErrorMessage()
    ENDIF
 
 RETURN hResult
