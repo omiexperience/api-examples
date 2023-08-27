@@ -7,7 +7,7 @@ Agora vai! Seja bem vindo ao nosso repositório com mais informações para os n
 
 O Portal do desenvolvedor é a nossa *nave mãe*, lá você encontrará a lista de todas as API's, exemplos de uso, credenciais de acesso, etc:
 
-http://developer.omie.com.br/
+http://developer.omie.com.br
 
 ## Credencias de autenticação
 
@@ -15,17 +15,17 @@ Para obter as credenciais de acesso siga esse guia:
 
 http://docs.omie.com.br/m/20204/l/612759-obtendo-a-chave-de-acesso-para-integracoes-de-api
 
-Por boa prática, não começa os testes no aplicativo de produção :-)
+Por boa prática, não comece os testes no aplicativo de produção :-)
 
 > Eu sei que é mais forte que você, mas recomendamos do fundo do coração
 > que você crie um aplicativo novo para realizar os testes (pode ficar
-> tranquilo, é grátis)
+> tranquilo, é grátis). --> [É só clicar aqui](https://app.omie.com.br/trial).
 
 ## Lista de API's
 
 Não queremos ser repetitivos, mas para facilitar a sua vida vamos deixar um link para a lista de API's e exemplos de uso:
 
-http://developer.omie.com.br/service-list/
+http://developer.omie.com.br/service-list
 
 ## SDK's e Exemplos
 
