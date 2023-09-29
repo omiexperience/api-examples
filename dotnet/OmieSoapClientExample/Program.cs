@@ -1,9 +1,9 @@
 ﻿#region
 
+using OmieSoapClientExample.ClientesCadastroReference;
 using System;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
-using OmieSoapClientExample.ClientesCadastroReference;
 
 #endregion
 
@@ -11,13 +11,12 @@ namespace OmieSoapClientExample
 {
     class Program
     {
-        // Olá :-)
-        //
-        // Esse é um exemplo (bem simples) de como fazer um upsert no cadastro de um cliente.
-        //
-        // Um "upsert" significa que se o cadastro existe, ele será atualizado, caso contrário, criará um novo :-)
-        //
-        // As credenciais de acesso solicitadas abaixo estão disponíveis no Portal do Desenvolvedor: http://developer.omie.com.br/
+        /* 
+            Olá :)
+            Esse é um exemplo (bem simples) de como fazer um upsert no cadastro de um cliente.
+            Um "upsert" significa que se o cadastro existe, ele será atualizado, caso contrário, criará um novo :-)
+            As credenciais de acesso solicitadas abaixo estão disponíveis no Portal do Desenvolvedor: http://developer.omie.com.br/
+        */
 
         static readonly string omie_app_key = "DIGITE_O_APP_KEY_AQUI";
         static readonly string omie_app_secret = "DIGITE_O_APP_SECRET_AQUI";
