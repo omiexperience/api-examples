@@ -66,3 +66,9 @@ __recovery/
 *.stat
 
 .DS_Store
+*.suo
+/dotnet/.vs/OmieSoapClientExample/FileContentIndex
+/dotnet/OmieSoapClientExample/obj/x86/Debug
+/dotnet/OmieSoapClientExample/bin/Debug
+/.vs
+/dotnet/OmieSoapClientExample/obj/x86/Release

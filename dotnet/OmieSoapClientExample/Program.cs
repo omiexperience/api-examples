@@ -1,9 +1,9 @@
 ﻿#region
 
+using OmieSoapClientExample.ClientesCadastroReference;
 using System;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
-using OmieSoapClientExample.ClientesCadastroReference;
 
 #endregion
 
@@ -11,18 +11,17 @@ namespace OmieSoapClientExample
 {
     class Program
     {
-        // Olá :-)
-        //
-        // Esse é um exemplo (bem simples) de como fazer um upsert no cadastro de um cliente.
-        //
-        // Um "upsert" significa que se o cadastro existe, ele será atualizado, caso contrário, criará um novo :-)
-        //
-        // As credenciais de acesso solicitadas abaixo estão disponíveis no Portal do Desenvolvedor: http://developer.omie.com.br/
+        /* 
+            Olá :)
+            Esse é um exemplo (bem simples) de como fazer um upsert no cadastro de um cliente.
+            Um "upsert" significa que se o cadastro existe, ele será atualizado, caso contrário, criará um novo :-)
+            As credenciais de acesso solicitadas abaixo estão disponíveis no Portal do Desenvolvedor: http://developer.omie.com.br/
+        */
 
-        static string omie_app_key = "DIGITE_O_APP_KEY_AQUI";
-        static string omie_app_secret = "DIGITE_O_APP_SECRET_AQUI";
+        static readonly string omie_app_key = "DIGITE_O_APP_KEY_AQUI";
+        static readonly string omie_app_secret = "DIGITE_O_APP_SECRET_AQUI";
 
-        static void Main(string[] args)
+        static void Main()
         {
             // Cria um novo client e define o responsável pelo tratamento do retorno
             var soapClient = new ClientesCadastroSoapClient();
@@ -33,18 +32,19 @@ namespace OmieSoapClientExample
             builder.Headers.Add(AddressHeader.CreateAddressHeader("app_secret", "", omie_app_secret));
             soapClient.Endpoint.Address = builder.ToEndpointAddress();
 
-            CBLog("Exemplo DotNet");
-            CBLog("");
+            CBLog("Exemplo DotNet\n");
+
+
             CBLog("  1 - Atualizar um cliente");
             CBLog("  2 - Listar clientes");
-            CBLog("");
-            CBLog("      Opção: ", false);
 
-            var a = Console.ReadKey();
-            CBLog("");
-            CBLog("");
+            CBLog("\n      Escolha uma Opção: ", false);
 
-            if (a.KeyChar == '1')
+            var opcao = Console.ReadKey();
+
+            CBLog("\n\n");
+
+            if (opcao.KeyChar == '1')
             {
                 // Upsert no cadastro de cliente
                 CBLog("Atualizando o cadastro do cliente... ", false);
@@ -61,18 +61,20 @@ namespace OmieSoapClientExample
                 soapClient.UpsertClienteCompleted += OnSoapClientOnUpsertClienteCompleted;
                 soapClient.UpsertClienteAsync(cliente);
             }
-            else if (a.KeyChar == '2')
+            else if (opcao.KeyChar == '2')
             {
                 CBLog("Listando clientes cadastrados... ");
 
-                var clientes_filtro = new clientes_list_request();
-                clientes_filtro.apenas_importado_api = "N";
-                clientes_filtro.pagina = "1";
-                clientes_filtro.registros_por_pagina = "3";
+                var clientes_filtro = new clientes_list_request
+                {
+                    apenas_importado_api = "N",
+                    pagina = "1",
+                    registros_por_pagina = "3"
+                };
 
-                soapClient.ListarClientesCompleted += soapClient_ListarClientesCompleted;
+                // Executa a chamada
+                soapClient.ListarClientesCompleted += SoapClient_ListarClientesCompleted;
                 soapClient.ListarClientesAsync(clientes_filtro);
-
             }
 
             Console.ReadKey();
@@ -99,7 +101,7 @@ namespace OmieSoapClientExample
         /// </summary>
         /// <param name="o"></param>
         /// <param name="soapArgs"></param>
-        static void soapClient_ListarClientesCompleted(object sender, ListarClientesCompletedEventArgs soapArgs)
+        static void SoapClient_ListarClientesCompleted(object sender, ListarClientesCompletedEventArgs soapArgs)
         {
             if (soapArgs.Error == null)
             {
@@ -114,6 +116,7 @@ namespace OmieSoapClientExample
             else
                 CBLog("ERRO: " + soapArgs.Error.Message);
         }
+
         /// <summary>
         /// Exibe uma mensagem no console
         /// </summary>
@@ -126,6 +129,5 @@ namespace OmieSoapClientExample
             else
                 Console.Out.Write(text);
         }
-
     }
 }
